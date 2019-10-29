@@ -1,0 +1,38 @@
+{
+    "name": "itk-dev/php-ckan-api-client",
+    "description": "PHP client for CKAN API (https://docs.ckan.org/en/2.8/api/)",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "ItkDev\\CKAN\\API\\Client\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "symfony/http-client": "^4.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mikkel Ricky",
+            "email": "rimi@aarhus.dk"
+        }
+    ],
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15"
+    },
+    "scripts": {
+        "check-coding-standards/php-cs-fixer": [
+            "php-cs-fixer --config=.php_cs.dist fix --dry-run"
+        ],
+        "check-coding-standards": [
+            "@check-coding-standards/php-cs-fixer"
+        ],
+        "apply-coding-standards/php-cs-fixer": [
+            "php-cs-fixer --config=.php_cs.dist fix"
+        ],
+        "apply-coding-standards": [
+            "@apply-coding-standards/php-cs-fixer"
+        ]
+    }
+}
