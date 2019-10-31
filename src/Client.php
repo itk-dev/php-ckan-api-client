@@ -20,6 +20,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
  */
 class Client
 {
+    // Must end with a slash!
     protected $apiPath = 'api/3/';
 
     protected $apiUrl;
@@ -38,7 +39,7 @@ class Client
     public function __construct(array $configuration)
     {
         $this->configuration = $configuration;
-        $this->apiUrl = rtrim($this->require('url'), '/').'/'.$this->apiPath.'/';
+        $this->apiUrl = rtrim($this->require('url'), '/').'/'.$this->apiPath;
         $this->apiKey = $this->require('api_key');
     }
 
