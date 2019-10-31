@@ -10,7 +10,7 @@
 
 namespace ItkDev\CKAN\API\Client;
 
-use ItkDev\CKAN\Client\Exception\InvalidConfigurationException;
+use ItkDev\CKAN\API\Client\Exception\InvalidConfigurationException;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
@@ -20,7 +20,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
  */
 class Client
 {
-    protected $apiVersion = 3;
+    protected $apiPath = 'api/3/';
 
     protected $apiUrl;
     protected $apiKey;
@@ -38,7 +38,7 @@ class Client
     public function __construct(array $configuration)
     {
         $this->configuration = $configuration;
-        $this->apiUrl = rtrim($this->require('api_url'), '/').'/'.$this->apiVersion.'/';
+        $this->apiUrl = rtrim($this->require('url'), '/').'/'.$this->apiPath.'/';
         $this->apiKey = $this->require('api_key');
     }
 
